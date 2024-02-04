@@ -1,12 +1,13 @@
+import styled from "styled-components";
 import { Outlet } from "react-router-dom";
+// COMPONENTS
 import Header from "./Header";
 import SideBar from "./SideBar";
-import styled from "styled-components";
 
 const MAIN = styled.main`
   background-color: var(--color-grey-50);
-
   padding: 4rem 4.8rem 6.4rem;
+  overflow-y: scroll;
 `;
 const StyledAppLayout = styled.div`
   display: grid;
