@@ -3,7 +3,6 @@ import { getToday } from "../utils/helpers";
 import supabase from "./supabase";
 
 export async function getBookings({ filter, sortBy, page }) {
-  console.log(filter);
   let query = supabase
     .from("bookings")
     .select(
@@ -47,7 +46,6 @@ export async function getBooking(id) {
     console.error(error);
     throw new Error("Booking not found");
   }
-
   return data;
 }
 
