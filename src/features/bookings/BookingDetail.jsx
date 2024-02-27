@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { useNavigate } from "react-router-dom";
 
-import { useCabinsBooking } from "./useBooking";
+import { useBooking } from "./useBooking";
 import { useMoveBack } from "../../hooks/useMoveBack";
 
 import Row from "../../ui/Row";
@@ -22,7 +22,7 @@ const HeadingGroup = styled.div`
 function BookingDetail() {
   const moveBack = useMoveBack();
   const navigate = useNavigate();
-  const { booking, isLoading } = useCabinsBooking();
+  const { booking, isLoading } = useBooking();
 
   if (isLoading) return <Spinner />;
 
