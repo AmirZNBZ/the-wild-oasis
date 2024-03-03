@@ -9,6 +9,7 @@ import { useCheckout } from "../check-in-out/useCheckout";
 import Row from "../../ui/Row";
 import Tag from "../../ui/Tag";
 import Modal from "../../ui/Modal";
+import Empty from "../../ui/Empty";
 import Button from "../../ui/Button";
 import Spinner from "../../ui/Spinner";
 import Heading from "../../ui/Heading";
@@ -31,7 +32,7 @@ function BookingDetail() {
   const { deleteBooking, isDeleting } = useDeleteBooking();
 
   if (isLoading) return <Spinner />;
-
+  if(!booking) return <Empty resourceName="booking" />
   const { status, id: bookingId } = booking;
 
   const statusToTagName = {
